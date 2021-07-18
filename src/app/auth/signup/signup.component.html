@@ -1,0 +1,171 @@
+<div class="container">
+     <h3 class="text-center font-weight-light">
+             ADD User
+     </h3>
+</div>
+
+<div class="container">
+    <form  #signUpForm="ngForm" (ngSubmit)="addingUser()">
+
+        <div>
+            <label for="username">Username</label>
+             <div>
+                 <input type="text" size ="50" placeholder="Username" required minlength="6" name="username"
+                 [(ngModel)]="newUser.name" #usernameVar="ngModel"  [ngClass]="{
+                     'is-invalid':
+                     (usernameVar.touched||usernameVar.dirty)&&
+                     !usernameVar.valid
+                 }"/>
+                 <div>
+                      <span *ngIf="usernameVar.errors?.required" class="errormessage">
+                          Please enter Username.
+                      </span>
+                      <span *ngIf="usernameVar.errors?.minlength" class="errormessage">
+                        Username must be at least 6 character long.
+                    </span>
+                </div>
+             </div>
+        </div>
+
+        <div>
+            <label for="firstName">First Name</label>
+             <div>
+                 <input type="text"  size ="50" placeholder="First Name" required minlength="2" name="firstName"
+                 [(ngModel)]="newUser.firstName" #firstNameVar="ngModel"  [ngClass]="{
+                     'is-invalid':
+                     (firstNameVar.touched||firstNameVar.dirty)&&
+                     !firstNameVar.valid
+                 }"/>
+                 <div>
+                      <span *ngIf="firstNameVar.errors?.required" class="errormessage">
+                          Please enter First Name.
+                      </span>
+                      <span *ngIf="firstNameVar.errors?.minlength" class="errormessage">
+                         First Name must be at least 2 character long.
+                    </span>
+                 </div>
+             </div>
+        </div>
+
+        <div>
+            <label for="middleName">Middle Name</label>
+             <div>
+                 <input type="text"  size ="50" placeholder="Middle Name" name="middleName"
+                 [(ngModel)]="newUser.middleName"/>
+             </div>
+        </div>
+
+        <div>
+            <label for="lastName">Last Name</label>
+             <div>
+                 <input type="text" size ="50" placeholder="Last Name" required minlength="2" name="lastName"
+                 [(ngModel)]="newUser.lastName" #lastNameVar="ngModel"  [ngClass]="{
+                     'is-invalid':
+                     (lastNameVar.touched||lastNameVar.dirty)&&
+                     !lastNameVar.valid
+                 }"/>
+                 <div>
+                      <span *ngIf="lastNameVar.errors?.required" class="errormessage">
+                          Please enter Last Name.
+                      </span>
+                      <span *ngIf="lastNameVar.errors?.minlength" class="errormessage">
+                         Last Name must be at least 2 character long.
+                    </span>
+                 </div>
+             </div>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+             <div>
+                 <input type="email" size ="50" placeholder="Email" required minlength="6" name="email"
+                 [(ngModel)]="newUser.email" #emailVar="ngModel"  [ngClass]="{
+                     'is-invalid':
+                     (emailVar.touched||emailVar.dirty)&&
+                     !emailVar.valid
+                 }"/>
+                 <div>
+                      <span *ngIf="emailVar.errors?.required" class="errormessage">
+                          Please enter Email.
+                      </span>
+                      <span *ngIf="emailVar.errors?.minlength" class="errormessage">
+                         Email must be at least 6 character long.
+                    </span>
+                 </div>
+             </div>
+        </div>
+
+        <div>
+            <label for="mobileNumber">Mobile Number</label>
+             <div>
+                 <input type="text" size ="50" placeholder="Mobile Number" required minlength="10" name="mobileNumber"
+                 [(ngModel)]="newUser.mobile" #mobileNumberVar="ngModel"  [ngClass]="{
+                     'is-invalid':
+                     (mobileNumberVar.touched||mobileNumberVar.dirty)&&
+                     !mobileNumberVar.valid
+                 }"/>
+                 <div>
+                      <span *ngIf="mobileNumberVar.errors?.required" class="errormessage">
+                          Please enter Mobile Number.
+                      </span>
+                      <span *ngIf="mobileNumberVar.errors?.minlength" class="errormessage">
+                         Mobile Number must be at least 10 digit long.
+                    </span>
+                 </div>
+             </div>
+        </div>
+
+
+        <div>
+            <label for="password">Password</label>
+             <div>
+                 <input type="password" size ="50" placeholder="Password" required minlength="6" name="password"
+                 [(ngModel)]="newUser.password" #passwordVar="ngModel"  [ngClass]="{
+                     'is-invalid':
+                     (passwordVar.touched||passwordVar.dirty)&&
+                     !passwordVar.valid
+                 }"/>
+                 <div>
+                      <span *ngIf="passwordVar.errors?.required" class="errormessage">
+                          Please enter Password.
+                      </span>
+                      <span *ngIf="passwordVar.errors?.minlength" class="errormessage">
+                         PassWord must be at least 6 character long.
+                    </span>
+                 </div>
+             </div>
+        </div>
+
+        <div>
+            <label for="telephoneExt">Telephone Extension</label>
+             <div>
+                 <input type="text" size ="50" placeholder="0542"   name="telephoneExt"
+                 [(ngModel)]="newUser.telephoneExtension"/>            
+             </div>
+        </div>
+
+
+        <div>
+            <label for="telephone">Telephone</label>
+             <div>
+                 <input type="number"  placeholder="Telephone" name="telephone"
+                 [(ngModel)]="newUser.telephone"/>
+             </div>
+        </div>
+
+        <div>
+            <span>
+                <button width=""class="button" type='reset' class="button" >
+                    Clear Form
+                </button>
+            </span>
+
+        <span>
+                <button class="button" type='submit' [disabled]=!signUpForm.valid  class="button"  >
+                    Add User
+                </button>
+            </span>
+        </div>
+
+    </form>
+</div>

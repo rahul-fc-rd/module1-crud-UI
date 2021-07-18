@@ -1,0 +1,79 @@
+<div>
+    <h2>Get User Details</h2>
+</div>
+
+<form  #findByIDForm="ngForm" (ngSubmit)="findByUserId()">
+    <div>
+        <label for="userId">User Id:</label>
+        <input [(ngModel)]="userId" id="userId"type="number" required #id="ngModel" name="userId">
+       <div>
+        <span *ngIf="(id.touched||id.dirty)&&!id.valid" class="errormessage">
+                Enter User Id!!
+            </span>
+       </div>
+    </div>
+  <br>
+    <div>
+        <button class="button" type='submit' [disabled]=!findByIDForm.valid class="button"  >
+             Search User
+        </button>
+    </div>
+    <div>
+
+             <div *ngIf=display>
+
+                <table>
+                    <tr>
+                        <td><label for="name">UserName:</label></td>
+                        <td><span id="name">{{user.name}}</span></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                           <td><label for="firstName">Firstname</label></td>
+                           <td><span id="firstName">{{user.firstName}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="middleName">Middlename</label></td>
+                        <td><span id="middleName">{{user.middleName}}</span></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><label for="lastName">Lastname</label></td>
+                        <td><span id="lastName">{{user.lastName}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><span id="email">{{user.email}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="mobile">Mobile Number</label></td>
+                        <td><span id="mobile">{{user.mobile}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="telephoneExtension">Telephone Extension</label></td>
+                        <td><span id="telephoneExtension">{{user.telephoneExtension}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="telephone">Telephone</label></td>
+                        <td><span id="telephone">{{user.telephone}}</span></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="password">Password</label></td>
+                        <td><span id="password">{{user.password}}</span></td>
+                    </tr>
+                    
+                </table>
+
+        </div>
+ </div>   
+            
+    </form>
+

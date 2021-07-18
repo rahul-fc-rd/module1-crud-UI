@@ -1,0 +1,41 @@
+<div >
+    <div >
+        <!-- <button type="submit"  (click)="goBack()">
+            Back
+        </button> -->
+        <h2 class="text-center font-weight-light">
+           User List
+        </h2>
+    </div>
+</div>
+<div >
+    <table >
+        <thead>
+            <tr>
+                <th >UserName</th>
+                <th >Firstname</th>
+                <th >Middlename</th>
+                <th >Lastname</th>
+                <th>Email</th>
+                <th >Mobile Number</th>
+                <th >TelephoneExt</th>
+                <th>Telephone</th>
+                <th >Password</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <th>{{ user.name}}</th>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.middleName }}</td>
+                <th>{{ user.lastName }}</th>
+                <td>{{ user.email }}</td>
+                <td>{{ user.mobile}}</td>
+                <td>{{ user.telephoneExtension }}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.password }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
